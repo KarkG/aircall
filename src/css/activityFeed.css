@@ -1,0 +1,32 @@
+.calls {
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.call {
+	width: 100%;
+	margin: 10px;
+	background-color: white;
+	border: 1px solid lightgray;
+	flex-direction: row;
+	flex: auto;
+}
+
+.phoneNumber_div {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	display: inline-block;
+	width: '100%';
+	/* text-align: center; */
+}
+
+.icon {
+	display: inline-block;
+	flex: 1;
+}
+
+.calls {
+	height: 525px;
+}
