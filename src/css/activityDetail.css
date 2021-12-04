@@ -1,0 +1,13 @@
+.modal_title {
+	font-size: 20px;
+	margin-bottom: 15px;
+}
+
+.modal_description {
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+.modal_button {
+	text-align: center;
+}

@@ -2,6 +2,7 @@ import React from 'react'
 import Modal from '@mui/material/Modal'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
+import '../css/activityDetail.css'
 
 export default function ActivityDetail({
 	openModal,
@@ -31,24 +32,19 @@ export default function ActivityDetail({
 					width: 200,
 				}}
 			>
-				<h2
-					id='child-modal-title'
-					style={{
-						fontSize: 20,
-					}}
-				>
+				<h2 className='modal_title'>
 					<strong>Call Details</strong>
 				</h2>
-				<p id='child-modal-description'>
+				<p className='modal_description'>
 					{callDetails && `From: ${callDetails.from}`}
 				</p>
-				<p id='child-modal-description'>
+				<p className='modal_description'>
 					{callDetails && `To: ${callDetails.to}`}
 				</p>
-				<p id='child-modal-description'>
+				<p className='modal_description'>
 					{callDetails && `Date: ${callDetails.created_at}`}
 				</p>
-				<p id='child-modal-description'>
+				<p className='modal_description'>
 					{callDetails &&
 						`Duration of call: ${
 							callDetails.durationHr > 0
@@ -64,10 +60,10 @@ export default function ActivityDetail({
 								: ''
 						}`}
 				</p>
-				<p id='child-modal-description'>
+				<p className='modal_description'>
 					{callDetails && `Via: ${callDetails.via}`}
 				</p>
-				<div style={{ textAlign: 'center' }}>
+				<div className='modal_button'>
 					<Button
 						style={{ alignSelf: 'center' }}
 						onClick={() => setOpenModal(false)}

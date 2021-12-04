@@ -14,14 +14,6 @@
 	flex: auto;
 }
 
-.phoneNumber_div {
-	padding-top: 10px;
-	padding-bottom: 10px;
-	display: inline-block;
-	width: '100%';
-	/* text-align: center; */
-}
-
 .icon {
 	display: inline-block;
 	flex: 1;
@@ -29,4 +21,40 @@
 
 .calls {
 	height: 525px;
+}
+
+.paper_container {
+	padding: 10px;
+	text-align: center;
+}
+
+.paper_div {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.icon_container {
+	position: relative;
+	display: inline-block;
+	align-self: center;
+}
+
+.icon_div {
+	height: 24px;
+	width: 24px;
+}
+
+.call_from_div {
+	font-size: 20px;
+	margin-bottom: 5px;
+}
+.call_to_div {
+	font-size: 10px;
+}
+
+.right_bottom_icons_div {
+	align-items: center;
+	display: flex;
 }

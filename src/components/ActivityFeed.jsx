@@ -10,7 +10,7 @@ import MoveToInboxIcon from '@mui/icons-material/MoveToInbox'
 import UnarchiveIcon from '@mui/icons-material/Unarchive'
 import Button from '@mui/material/Button'
 import Divider from '@mui/material/Divider'
-import './css/activityFeed.css'
+import '../css/activityFeed.css'
 import ActivityDetail from './ActivityDetail.jsx'
 
 const ActivityFeed = ({ currentTab }) => {
@@ -21,14 +21,12 @@ const ActivityFeed = ({ currentTab }) => {
 	const [displayedDividers, setDisplayedDividers] = useState([])
 	const [callDetails, setCallDetails] = useState(null)
 	const [openModal, setOpenModal] = useState(false)
-	const [archive, setArchive] = useState(false)
 
 	useEffect(() => {
 		fetchCalls()
 	}, [])
 
 	useEffect(() => {
-		// let dateArray = []
 		let oldArray = []
 		setDisplayedCalls(oldArray)
 		setCallPapers([])
@@ -52,10 +50,6 @@ const ActivityFeed = ({ currentTab }) => {
 			}
 		})
 	}, [calls, currentTab])
-
-	// useEffect(() => {
-	// 	if (archive) renderCallPaper()
-	// }, [archive])
 
 	useEffect(() => {
 		renderCallPaper()
@@ -152,10 +146,7 @@ const ActivityFeed = ({ currentTab }) => {
 			<Fragment key={index}>
 				{displayedDividers[index]}
 				<Paper
-					style={{
-						padding: 10,
-						textAlign: 'center',
-					}}
+					className='paper_container'
 					sx={
 						call.call_type == 'missed'
 							? {
@@ -164,27 +155,10 @@ const ActivityFeed = ({ currentTab }) => {
 							: null
 					}
 				>
-					<div
-						style={{
-							display: 'inline-flex',
-							width: '100%',
-							justifyContent: 'space-between',
-						}}
-					>
-						<div
-							style={{
-								position: 'relative',
-								display: 'inline-block',
-								alignSelf: 'center',
-							}}
-						>
+					<div className='paper_div'>
+						<div className='icon_container'>
 							{call.direction == 'inbound' ? (
-								<div
-									style={{
-										height: 24,
-										width: 24,
-									}}
-								>
+								<div className='icon_div'>
 									<PhoneCallbackIcon
 										style={
 											call.call_type == 'voicemail'
@@ -218,32 +192,15 @@ const ActivityFeed = ({ currentTab }) => {
 							)}
 						</div>
 						<div>
-							<div
-								style={{
-									fontSize: 20,
-									marginBottom: 5,
-								}}
-							>
-								{call.from}
-							</div>
-							<div
-								style={{
-									fontSize: 10,
-								}}
-							>
+							<div className='call_from_div'>{call.from}</div>
+							<div className='call_to_div'>
 								{call.call_type == 'missed'
 									? `tried to call on ${call.to}`
 									: call.to}
 								{` at ${call.newTime}`}
 							</div>
 						</div>
-						<div
-							style={{
-								color: '#000000',
-								alignItems: 'center',
-								display: 'inline-flex',
-							}}
-						>
+						<div className='right_bottom_icons_div'>
 							<Button
 								style={{
 									minWidth: 0,
@@ -275,7 +232,6 @@ const ActivityFeed = ({ currentTab }) => {
 			</Fragment>
 		))
 		setCallPapers(callPapersArray)
-		setArchive(false)
 	}
 
 	return (
@@ -292,20 +248,4 @@ const ActivityFeed = ({ currentTab }) => {
 	)
 }
 
-const style = {
-	my: 2,
-}
-
 export default ActivityFeed
-
-{
-	/* <div className='call' key={index}>
-					<div className='icon'>
-					</div>
-					<div className='phoneNumber_div'>
-						<p>
-							<strong>{call.from}</strong>
-						</p>
-					</div>
-				</div> */
-}

@@ -5,7 +5,7 @@ import DialpadIcon from '@mui/icons-material/Dialpad'
 import ContactsIcon from '@mui/icons-material/Contacts'
 import SettingsIcon from '@mui/icons-material/Settings'
 import Button from '@mui/material/Button'
-import './css/bottomTab.css'
+import '../css/bottomTab.css'
 
 const BottomTabs = ({ currentTab, setCurrentTab }) => {
 	return (
